@@ -1,0 +1,30 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  worker:
+    build: .
+    command: celery -A celery_app worker --loglevel=info
+    env_file:
+      - .env
+    environment:
+      CELERY_BROKER_URL: redis://redis:6379/0
+    depends_on:
+      - redis
+
+  app:
+    build: .
+    command: python app.py
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    environment:
+      CELERY_BROKER_URL: redis://redis:6379/0
+      HTTP_HOST: 0.0.0.0
+      HTTP_PORT: "5000"
+    depends_on:
+      - redis
+      - worker

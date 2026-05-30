@@ -1,0 +1,4 @@
+celery>=5.4
+redis>=5.0
+python-dotenv>=1.0
+flask>=3.0
