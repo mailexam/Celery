@@ -5,7 +5,7 @@ from email.message import EmailMessage
 
 def smtp_host() -> str:
     login = os.environ["MAILEXAM_LOGIN"]
-    return f"{login}.mailexam.ru"
+    return f"{login}.mailexam.io"
 
 
 def send_test(*, to: str, subject: str, body: str) -> None:

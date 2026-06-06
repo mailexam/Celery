@@ -1,6 +1,6 @@
 # Celery + Mailexam
 
-Minimal [Celery](https://docs.celeryq.dev/) example that sends test mail through [Mailexam](https://mailexam.ru/) SMTP via a background worker and `smtplib`.
+Minimal [Celery](https://docs.celeryq.dev/) example that sends test mail through [Mailexam](https://mailexam.io/) SMTP via a background worker and `smtplib`.
 
 Based on the [Mailexam Celery guide](https://wiki.mailexam.ru/en/examples/celery/).
 
@@ -16,7 +16,7 @@ From your Mailexam welcome email or dashboard:
 |----------|-------------|
 | `MAILEXAM_LOGIN` | SMTP login (for example, `xxxxx`) |
 | `MAILEXAM_PASSWORD` | SMTP password (paired with the login) |
-| Host | `{MAILEXAM_LOGIN}.mailexam.ru` (built in `mail.py`) |
+| Host | `{MAILEXAM_LOGIN}.mailexam.io` (built in `mail.py`) |
 
 ## Quick start (host)
 
@@ -163,7 +163,7 @@ For tests without broker and SMTP:
 app.conf.task_always_eager = True
 ```
 
-After sending a message in a test, verify delivery via the [Mailexam API](https://mailexam.ru/api).
+After sending a message in a test, verify delivery via the [Mailexam API](https://mailexam.io/api).
 
 ## Troubleshooting
 
@@ -174,7 +174,7 @@ After sending a message in a test, verify delivery via the [Mailexam API](https:
 
 **SMTP error in worker logs**
 
-- Host must be `{login}.mailexam.ru`; login and password must come from the same Mailexam project.
+- Host must be `{login}.mailexam.io`; login and password must come from the same Mailexam project.
 - The worker loads `.env` via `load_dotenv()` in `celery_app.py`.
 
 **Message not in the dashboard**
@@ -188,4 +188,4 @@ After sending a message in a test, verify delivery via the [Mailexam API](https:
 - [Flask reference implementation](https://github.com/mailexam/Flask) — same `mail.py` module
 - [Django](https://github.com/mailexam/Django) — SMTP via `send_mail` in tasks
 - [Celery documentation](https://docs.celeryq.dev/)
-- [Mailexam API documentation](https://mailexam.ru/api)
+- [Mailexam API documentation](https://mailexam.io/api)
