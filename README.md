@@ -189,3 +189,7 @@ After sending a message in a test, verify delivery via the [Mailexam API](https:
 - [Django](https://github.com/mailexam/Django) — SMTP via `send_mail` in tasks
 - [Celery documentation](https://docs.celeryq.dev/)
 - [Mailexam API documentation](https://mailexam.io/api)
+
+## License
+
+Apache 2.0
