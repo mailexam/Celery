@@ -188,6 +188,7 @@ After sending a message in a test, verify delivery via the [Mailexam API](https:
 - [Flask reference implementation](https://github.com/mailexam/Flask) — same `mail.py` module
 - [Django](https://github.com/mailexam/Django) — SMTP via `send_mail` in tasks
 - [Sidekiq](https://github.com/mailexam/Sidekiq) — Ruby background jobs with Redis
+- [BullMQ](https://github.com/mailexam/BullMQ) — Node.js background jobs with Redis
 - [Celery documentation](https://docs.celeryq.dev/)
 - [Mailexam API documentation](https://mailexam.io/api)
 
